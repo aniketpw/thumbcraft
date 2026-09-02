@@ -150,10 +150,22 @@ export async function renderThumbnailToCanvas(
     }
   }
 
-  // 2. Set EXACT Dimensions: Official YouTube 16:9 Thumbnail Standard (1280 × 720 HD or 1920 × 1080 FHD)
+  // 2. Set EXACT Dimensions:
+  // Preserve exact natural aspect ratio of the template (784/376) so there is ZERO stretching!
   const is1080p = data.resolution === '1080p';
-  const width = is1080p ? 1920 : 1280;
-  const height = is1080p ? 1080 : 720;
+  let width: number;
+  let height: number;
+
+  if (isPwTorn || data.customBgImage) {
+    const targetW = is1080p ? 1920 : 1280;
+    const aspect = bgImg ? (bgImg.naturalWidth / bgImg.naturalHeight) : PW_OFFICIAL_TEMPLATE_ASPECT_RATIO;
+    width = targetW;
+    height = Math.round(targetW / aspect);
+  } else {
+    width = is1080p ? 1920 : 1280;
+    height = is1080p ? 1080 : 720;
+  }
+
   const scaleRatio = width / 1920;
 
   canvas.width = width;
