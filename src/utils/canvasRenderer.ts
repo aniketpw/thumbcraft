@@ -406,18 +406,21 @@ async function renderPwOfficialTornLayout(
 
   // 4. Batch Code in Lower White Pill Card (e.g. "SIP S41-AJ31MA 2026")
   ctx.save();
-  const pillX = width * 0.019;
-  const pillY = height * 0.585;
-  const pillW = width * 0.59;
-  const pillH = height * 0.165;
+  // Exact measured bounds of the white card from the master template (784 x 376):
+  // Top: 229/376, Bottom: 293/376 -> Center Y: 261/376 (0.69415)
+  // Left: 18/784, Right: 462.5/784 -> Center X: 240.25/784 (0.3064)
+  const pillCenterX = width * (240.25 / 784);
+  const pillCenterY = height * (261 / 376);
+  const pillAvailableW = width * ((462.5 - 18) / 784) * 0.90;
+  const pillH = height * ((293 - 229) / 376);
 
   const batchCodeText = (data.batchName || 'SIP S41-AJ31MA 2026').toUpperCase();
   
-  let batchFontSize = Math.round(pillH * 0.50);
+  let batchFontSize = Math.round(pillH * 0.52);
   ctx.font = `800 ${batchFontSize}px 'Montserrat', 'Outfit', sans-serif`;
   let measuredBatchW = ctx.measureText(batchCodeText).width;
 
-  while (measuredBatchW > pillW - (width * 0.06) && batchFontSize > 16) {
+  while (measuredBatchW > pillAvailableW && batchFontSize > 16) {
     batchFontSize -= 2;
     ctx.font = `800 ${batchFontSize}px 'Montserrat', 'Outfit', sans-serif`;
     measuredBatchW = ctx.measureText(batchCodeText).width;
@@ -426,8 +429,6 @@ async function renderPwOfficialTornLayout(
   ctx.fillStyle = '#000000';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  const pillCenterX = pillX + (pillW / 2);
-  const pillCenterY = pillY + (pillH / 2);
   ctx.fillText(batchCodeText, pillCenterX, pillCenterY);
   ctx.restore();
 
