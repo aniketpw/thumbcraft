@@ -44,17 +44,9 @@ export const Header: React.FC<HeaderProps> = ({
             PW
           </div>
           <div>
-            <div className="flex items-center gap-2">
-              <span className="text-base font-bold tracking-tight text-slate-900 sm:text-lg">
-                Thumb<span className="text-cyan-600">Craft</span>
-              </span>
-              <span className="rounded-full border border-cyan-200 bg-cyan-50 px-2 py-0.5 text-[10px] font-bold text-cyan-700">
-                1-CLICK GENERATOR
-              </span>
-            </div>
-            <p className="hidden text-xs text-slate-500 sm:block">
-              Paste chapter & lecture details → Instant HD Thumbnail
-            </p>
+            <span className="text-lg font-bold tracking-tight text-slate-900 sm:text-xl">
+              Thumb<span className="text-cyan-600">Craft</span>
+            </span>
           </div>
         </div>
 

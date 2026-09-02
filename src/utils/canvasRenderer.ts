@@ -390,12 +390,12 @@ async function renderPwOfficialTornLayout(
 
   // If no text, keep cyan area COMPLETELY BLANK as user requested
   if (finalLines.length > 0) {
-    const lineHeight = targetFontSize * 1.20;
+    const lineHeight = targetFontSize * 1.22;
     const totalBlockH = (finalLines.length - 1) * lineHeight;
     const cyanCenterY = cyanTopY + (cyanAvailableH / 2);
     let startY = cyanCenterY - (totalBlockH / 2);
 
-    ctx.font = `800 ${targetFontSize}px 'Montserrat', sans-serif`;
+    ctx.font = `700 ${targetFontSize}px 'Montserrat', sans-serif`;
     finalLines.forEach((line) => {
       ctx.fillText(line, cyanCenterX, startY);
       startY += lineHeight;
@@ -413,13 +413,13 @@ async function renderPwOfficialTornLayout(
 
   const batchCodeText = (data.batchName || 'SIP S41-AJ31MA 2026').toUpperCase();
   
-  let batchFontSize = Math.round(pillH * 0.52);
-  ctx.font = `900 ${batchFontSize}px 'Montserrat', 'Outfit', sans-serif`;
+  let batchFontSize = Math.round(pillH * 0.50);
+  ctx.font = `800 ${batchFontSize}px 'Montserrat', 'Outfit', sans-serif`;
   let measuredBatchW = ctx.measureText(batchCodeText).width;
 
   while (measuredBatchW > pillW - (width * 0.06) && batchFontSize > 16) {
     batchFontSize -= 2;
-    ctx.font = `900 ${batchFontSize}px 'Montserrat', 'Outfit', sans-serif`;
+    ctx.font = `800 ${batchFontSize}px 'Montserrat', 'Outfit', sans-serif`;
     measuredBatchW = ctx.measureText(batchCodeText).width;
   }
 
@@ -433,7 +433,7 @@ async function renderPwOfficialTornLayout(
   ctx.save();
   const subjectY = height * 0.825;
   const subjectX = width * 0.035;
-  const iconSize = height * 0.102;
+  const iconSize = height * 0.098;
 
   const hasIcon = data.subject !== 'SST' && data.subject !== 'English';
 
@@ -442,8 +442,8 @@ async function renderPwOfficialTornLayout(
   }
 
   // Subject Text in Clean Bold Italic with standard weight
-  const subjectFontSize = Math.round(height * 0.092);
-  ctx.font = `italic 900 ${subjectFontSize}px 'Montserrat', 'Outfit', sans-serif`;
+  const subjectFontSize = Math.round(height * 0.088);
+  ctx.font = `italic 700 ${subjectFontSize}px 'Montserrat', sans-serif`;
   ctx.fillStyle = '#000000';
   ctx.textAlign = 'left';
   ctx.textBaseline = 'middle';
