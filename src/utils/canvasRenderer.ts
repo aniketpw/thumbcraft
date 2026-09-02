@@ -305,8 +305,19 @@ async function renderPwOfficialTornLayout(
       return [clean];
     }
 
-    const words = clean.split(/\s+/).filter(w => w.length > 0);
-    if (words.length <= 1) return [clean];
+    const rawWords = clean.split(/\s+/).filter(w => w.length > 0);
+    if (rawWords.length <= 1) return [clean];
+
+    // Merge trailing punctuation like ':', '-', '|' onto preceding token so it never wraps alone
+    const words: string[] = [];
+    for (let i = 0; i < rawWords.length; i++) {
+      const w = rawWords[i];
+      if ((w === ':' || w === '-' || w === '|') && words.length > 0) {
+        words[words.length - 1] += ' ' + w;
+      } else {
+        words.push(w);
+      }
+    }
 
     // Attempt balanced 2-line split if possible
     const totalW = ctx.measureText(clean).width;
@@ -347,8 +358,7 @@ async function renderPwOfficialTornLayout(
       }
     }
     if (curLine) wrapped.push(curLine);
-    const cleanLines = wrapped.filter(l => l.trim() !== ':' && l.trim() !== '-' && l.trim() !== '|');
-    return cleanLines.length > 0 ? cleanLines : wrapped;
+    return wrapped;
   };
 
   // Determine optimal font size (between height * 0.088 down to height * 0.058)
@@ -360,7 +370,7 @@ async function renderPwOfficialTornLayout(
     const candidateLines: string[] = [];
 
     if (chapterPart && topicPart) {
-      const headerText = `${chapterPart}${lecPart}`.trim();
+      const headerText = `${chapterPart}${lecPart} :`.trim();
       const headerLines = wrapTextToBalancedLines(headerText, testSize, maxCyanWidth);
       const topicLines = wrapTextToBalancedLines(topicPart, testSize, maxCyanWidth);
       candidateLines.push(...headerLines, ...topicLines);
