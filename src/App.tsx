@@ -33,6 +33,7 @@ import {
   SheetBatchRow, 
   GoogleSheetSyncResult 
 } from './utils/googleSheetSync';
+import { logVisitorTelemetry } from './utils/visitorTracker';
 
 export default function App() {
   const initialInput = "";
@@ -87,8 +88,9 @@ export default function App() {
         });
     };
 
-    // 1. Initial sync
+    // 1. Initial sync & visitor telemetry log
     performLiveSync();
+    logVisitorTelemetry('ThumbCraft');
 
     // 2. Immediate auto-sync when user comes back from Google Sheets tab
     window.addEventListener('focus', performLiveSync);
