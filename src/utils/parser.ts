@@ -23,17 +23,18 @@ const SUBJECT_KEYWORDS: Record<SubjectType, string[]> = {
     'circles', 'parabola', 'ellipse', 'hyperbola', 'complex numbers', 'quadratic equations',
     'permutations', 'combinations', 'pnc', 'binomial theorem', 'sequence and series', 'trigonometry'
   ],
-  Biology: [
-    'biology', 'botany', 'zoology', 'genetics', 'cell biology', 'photosynthesis', 'respiration',
-    'human physiology', 'plant physiology', 'biotechnology', 'ecology', 'evolution',
-    'reproduction in organisms', 'human reproduction', 'molecular basis of inheritance',
-    'principles of inheritance', 'digestion', 'circulation', 'nervous system', 'endocrine',
-    'morphology of flowering plants', 'anatomy of flowering plants', 'living world'
+  Botany: [
+    'botany', 'plant physiology', 'photosynthesis', 'respiration', 'plant reproduction',
+    'morphology of flowering plants', 'anatomy of flowering plants', 'living world',
+    'biological classification', 'plant kingdom', 'ecosystem', 'biodiversity'
   ],
-  Science: ['science', 'motion', 'force', 'gravitation', 'light', 'electricity', 'sound', 'acids bases salts'],
+  Zoology: [
+    'zoology', 'human physiology', 'human reproduction', 'reproductive health', 'evolution',
+    'genetics', 'biotechnology', 'digestion', 'circulation', 'nervous system', 'endocrine',
+    'locomotion', 'animal kingdom', 'human health and disease'
+  ],
   English: ['english', 'grammar', 'reading comprehension', 'literature', 'writing skills', 'tenses'],
-  'Social Studies': ['history', 'geography', 'civics', 'economics', 'sst', 'social science'],
-  'Computer Science': ['computer science', 'python', 'c++', 'java', 'sql', 'data structures', 'coding', 'web dev'],
+  SST: ['history', 'geography', 'civics', 'economics', 'sst', 'social science'],
   General: ['general knowledge', 'aptitude', 'reasoning', 'current affairs', 'general science']
 };
 

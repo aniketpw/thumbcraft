@@ -173,7 +173,7 @@ export const SAMPLE_TEACHERS: TeacherProfile[] = [
   {
     id: 'tarun_sir',
     name: 'Tarun Sir',
-    subject: 'Biology',
+    subject: 'Botany',
     title: 'Botany & Biology HOD • NEET Topper Maker',
     imageUrl: createTeacherCutoutSvg('Tarun Sir', '#ffffff', '#84cc16', '#1e293b', '#f2b588', true, 'male', 'pw_polo'),
     defaultPosition: 'right'
@@ -181,7 +181,7 @@ export const SAMPLE_TEACHERS: TeacherProfile[] = [
   {
     id: 'samapti_mam',
     name: 'Samapti Ma\'am',
-    subject: 'Biology',
+    subject: 'Zoology',
     title: 'Zoology Specialist • NEET Mentor',
     imageUrl: createTeacherCutoutSvg('Samapti Mam', '#4c1d95', '#ec4899', '#18181b', '#f6c3a5', false, 'female', 'blazer'),
     defaultPosition: 'right'
