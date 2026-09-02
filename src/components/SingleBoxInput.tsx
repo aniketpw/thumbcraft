@@ -241,7 +241,7 @@ export const SingleBoxInput: React.FC<SingleBoxInputProps> = ({
             rows={2}
             value={combinedInput}
             onChange={(e) => handleCombinedChange(e.target.value)}
-            placeholder="e.g. Chemical Bonding and Molecular Structure - 11 : Reason for Hybridisaton"
+            placeholder="Type or paste lecture details here... (e.g. Thermodynamics - 01 : Introduction | 27-AJ251EA | Physics)"
             className="w-full rounded-xl border border-slate-300 bg-slate-50/50 p-3.5 text-[15px] font-semibold text-slate-900 placeholder-slate-400 outline-none transition-all focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-100 shadow-2xs resize-y min-h-[68px] leading-relaxed"
           />
           {combinedInput && (
