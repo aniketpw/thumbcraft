@@ -1,5 +1,5 @@
 import { ThumbnailData } from '../types/thumbnail';
-import { renderExactPwTornTemplate, drawSubjectIcon, drawPwLogo } from './pwTemplateGenerator';
+import { renderExactPwTornTemplate, drawSubjectIcon } from './pwTemplateGenerator';
 import { 
   PW_OFFICIAL_TEMPLATE_DATA_URL,
   PW_OFFICIAL_TEMPLATE_WIDTH,
@@ -218,12 +218,6 @@ async function renderPwOfficialTornLayout(
     }
   }
 
-  // 1.1 PW Emblem in Top Right (Crisp Vector Circle matching official PW brand)
-  const logoRadius = Math.round(height * 0.115);
-  const logoX = width - (width * 0.055);
-  const logoY = height * 0.145;
-  drawPwLogo(ctx, logoX, logoY, logoRadius);
-
   // 2. Draw Teacher on the Right White Half (Auto-Trimmed & Uniformly Grounded)
   if (teacherImageUrl) {
     try {
@@ -341,7 +335,8 @@ async function renderPwOfficialTornLayout(
       }
     }
     if (curLine) wrapped.push(curLine);
-    return wrapped;
+    const cleanLines = wrapped.filter(l => l.trim() !== ':' && l.trim() !== '-' && l.trim() !== '|');
+    return cleanLines.length > 0 ? cleanLines : wrapped;
   };
 
   // Determine optimal font size (between height * 0.088 down to height * 0.058)
@@ -353,12 +348,12 @@ async function renderPwOfficialTornLayout(
     const candidateLines: string[] = [];
 
     if (chapterPart && topicPart) {
-      const fullHeader = `${chapterPart}${lecPart} :`;
-      const headerLines = wrapTextToBalancedLines(fullHeader, testSize, maxCyanWidth);
+      const headerText = `${chapterPart}${lecPart}`.trim();
+      const headerLines = wrapTextToBalancedLines(headerText, testSize, maxCyanWidth);
       const topicLines = wrapTextToBalancedLines(topicPart, testSize, maxCyanWidth);
       candidateLines.push(...headerLines, ...topicLines);
     } else if (chapterPart) {
-      const fullHeader = `${chapterPart}${lecPart}`;
+      const fullHeader = `${chapterPart}${lecPart}`.trim();
       const headerLines = wrapTextToBalancedLines(fullHeader, testSize, maxCyanWidth);
       candidateLines.push(...headerLines);
     } else if (topicPart) {
@@ -366,7 +361,7 @@ async function renderPwOfficialTornLayout(
       candidateLines.push(...topicLines);
     }
 
-    const testLineHeight = testSize * 1.22;
+    const testLineHeight = testSize * 1.20;
     const totalH = candidateLines.length * testLineHeight;
 
     if (totalH <= cyanAvailableH || testSize <= Math.round(height * 0.058)) {
