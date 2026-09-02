@@ -36,26 +36,26 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur-md px-4 py-3 sm:px-6 shadow-xs">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+    <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 backdrop-blur-md px-3 py-2.5 sm:px-6 sm:py-3 shadow-xs">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 sm:gap-4">
         {/* Brand */}
-        <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-cyan-500 text-white shadow-md shadow-cyan-500/20 font-black text-sm">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-xl bg-cyan-500 text-white shadow-md shadow-cyan-500/20 font-black text-xs sm:text-sm">
             PW
           </div>
           <div>
-            <span className="text-lg font-bold tracking-tight text-slate-900 sm:text-xl">
+            <span className="text-base font-bold tracking-tight text-slate-900 sm:text-xl">
               Thumb<span className="text-cyan-600">Craft</span>
             </span>
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3">
           {/* Batch Schedule Generator */}
           <button
             onClick={onOpenBatchModal}
-            className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 transition-all hover:bg-slate-100 hover:text-slate-900"
+            className="flex items-center gap-1.5 rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-xs font-semibold text-slate-700 transition-all hover:bg-slate-100 hover:text-slate-900"
             title="Generate whole week schedule (Batch Export)"
           >
             <Layers className="h-3.5 w-3.5 text-slate-600" />

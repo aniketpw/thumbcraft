@@ -400,8 +400,8 @@ export default function App() {
       />
 
       {/* Main Workspace Layout */}
-      <main className="flex-1 mx-auto w-full max-w-7xl px-4 py-6 sm:px-6">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+      <main className="flex-1 mx-auto w-full max-w-7xl px-3 py-4 sm:px-6 sm:py-6">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-12">
           
           {/* Left Column: 1-Click Single Box Input + Selectors (7 Cols) */}
           <div className="space-y-4 lg:col-span-7">
@@ -412,6 +412,18 @@ export default function App() {
               onUploadCustomBg={handleUploadCustomBg}
               onClearCustomBg={handleClearCustomBg}
             />
+
+            {/* Mobile-Only: Live Thumbnail Preview & Instant Download right after input */}
+            <div className="block lg:hidden">
+              <ThumbnailPreview
+                thumbnailData={thumbnailData}
+                teacherImageUrl={teacherImageUrl}
+                onUpdateThumbnailData={handleUpdateThumbnailData}
+                onDownload={handleDownload}
+                onCopyClipboard={handleCopyClipboard}
+                isCopied={isCopied}
+              />
+            </div>
 
             {/* 2. Faculty / Teacher Picker */}
             <TeacherSelector
@@ -432,8 +444,8 @@ export default function App() {
             />
           </div>
 
-          {/* Right Column: Sticky Live Canvas Preview & Quick Export (5 Cols) */}
-          <div className="lg:col-span-5">
+          {/* Right Column: Desktop Sticky Live Canvas Preview & Quick Export (5 Cols) */}
+          <div className="hidden lg:block lg:col-span-5">
             <div className="sticky top-20 space-y-4">
               <ThumbnailPreview
                 thumbnailData={thumbnailData}

@@ -5,7 +5,7 @@
  */
 
 const GOOGLE_APPS_SCRIPT_WEBHOOK = 
-  'https://script.google.com/macros/s/AKfycbxPzp5iv_ukhgiR_1ZydNfg7Th7WmnIBJda00aaz4meXB_fYHSJ_Riu3AzTYLGgIq_yGg/exec';
+  'https://script.google.com/macros/s/AKfycbxqWcpkS9VfQbL9JI8D-_ba7mKNJqaM0cpljNjr79_ycn-yavuA4bwhujx1bq5UtDdskw/exec';
 
 function parseDevice(ua: string): string {
   if (!ua) return 'Unknown Device';
