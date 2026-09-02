@@ -217,46 +217,80 @@ export function processSheetData(rows: string[][]): { teachers: SheetTeacherRow[
   };
 }
 
-// Fetch all 3 subsheets (PCMC, Viman Nagar, TC) live from client browser
-export async function fetchGoogleSheetLive(sheetUrlOrId: string): Promise<GoogleSheetSyncResult> {
+// Dynamic list of candidate center names to auto-detect and sync from Google Sheets
+export const KNOWN_CENTER_CANDIDATES = [
+  "PCMC", 
+  "Viman Nagar", 
+  "TC", 
+  "HAD", 
+  "Hadapsar", 
+  "FC Road", 
+  "Aundh", 
+  "Camp", 
+  "Swargate", 
+  "Kothrud", 
+  "Wakad", 
+  "Hinjewadi", 
+  "Baner", 
+  "Kalyani Nagar", 
+  "Pimpri", 
+  "Pune", 
+  "JM Road", 
+  "Chinchwad"
+];
+
+// Fetch all subsheets dynamically live from client browser
+export async function fetchGoogleSheetLive(
+  sheetUrlOrId: string, 
+  customSubsheets: string[] = []
+): Promise<GoogleSheetSyncResult> {
   const sheetId = extractSheetId(sheetUrlOrId);
   if (!sheetId) {
     throw new Error("Invalid Google Sheet URL or ID");
   }
 
-  const subsheets = [
-    { name: "PCMC", requireActive: true },
-    { name: "Viman Nagar", requireActive: false },
-    { name: "TC", requireActive: false }
-  ];
+  // Get default sheet (PCMC / gid=0) signature to identify fallback responses
+  let pcmcSig = "";
+  try {
+    const pcmcRes = await fetch("https://docs.google.com/spreadsheets/d/" + sheetId + "/gviz/tq?tqx=out:csv&gid=0");
+    if (pcmcRes.ok) {
+      const pcmcText = await pcmcRes.text();
+      pcmcSig = pcmcText.substring(0, 100);
+    }
+  } catch {}
+
+  const allToTest = Array.from(new Set([
+    "PCMC", 
+    "Viman Nagar", 
+    "TC", 
+    "HAD", 
+    ...customSubsheets, 
+    ...KNOWN_CENTER_CANDIDATES
+  ]));
 
   const allTeachers: SheetTeacherRow[] = [];
+  const discoveredCenters: string[] = [];
 
-  for (const sheet of subsheets) {
-    const urls = [
-      "https://docs.google.com/spreadsheets/d/" + sheetId + "/gviz/tq?tqx=out:csv&sheet=" + encodeURIComponent(sheet.name),
-      "https://docs.google.com/spreadsheets/d/" + sheetId + "/gviz/tq?tqx=out:csv&gid=0"
-    ];
+  for (const sheetName of allToTest) {
+    try {
+      const u = "https://docs.google.com/spreadsheets/d/" + sheetId + "/gviz/tq?tqx=out:csv&sheet=" + encodeURIComponent(sheetName);
+      const res = await fetch(u);
+      if (!res.ok) continue;
 
-    let sheetCsv = "";
-    for (const u of urls) {
-      try {
-        const res = await fetch(u);
-        if (res.ok) {
-          const txt = await res.text();
-          if (txt && !txt.includes("<!DOCTYPE html>") && txt.length > 15) {
-            sheetCsv = txt;
-            break;
-          }
-        }
-      } catch {}
-    }
+      const txt = await res.text();
+      if (!txt || txt.includes("<!DOCTYPE html>") || txt.length < 20) continue;
 
-    if (sheetCsv) {
-      const parsedRows = parseCSV(sheetCsv);
-      const centerTeachers = processCenterSheetRows(parsedRows, sheet.name, sheet.requireActive);
+      // Check if Google Sheets fell back to default sheet (gid=0)
+      const sig = txt.substring(0, 100);
+      const isDefaultFallback = sheetName !== "PCMC" && sig === pcmcSig;
+      if (isDefaultFallback) continue;
+
+      discoveredCenters.push(sheetName);
+      const parsedRows = parseCSV(txt);
+      const requireActive = sheetName === "PCMC";
+      const centerTeachers = processCenterSheetRows(parsedRows, sheetName, requireActive);
       allTeachers.push(...centerTeachers);
-    }
+    } catch {}
   }
 
   // Subject Sort order

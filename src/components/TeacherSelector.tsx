@@ -197,7 +197,6 @@ export const TeacherSelector: React.FC<TeacherSelectorProps> = ({
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [showControls, setShowControls] = useState(false);
 
-  const centers = ['All Centers', 'PCMC', 'Viman Nagar', 'TC'];
   const subjects = ['All', 'Physics', 'Chemistry', 'Mathematics', 'Botany', 'Zoology', 'English', 'SST', 'General'];
 
   const subjectOrder: Record<string, number> = {
@@ -230,6 +229,29 @@ export const TeacherSelector: React.FC<TeacherSelectorProps> = ({
     return SAMPLE_TEACHERS;
   }, [syncedTeachers]);
 
+  // Dynamically extract all available centers from teachers list
+  const centers = useMemo(() => {
+    const defaultCenterOrder = ['All Centers', 'PCMC', 'Viman Nagar', 'TC', 'HAD'];
+    const unique = new Set<string>();
+    allTeachers.forEach(t => {
+      if (t.center && t.center.trim()) {
+        unique.add(t.center.trim());
+      }
+    });
+
+    const list = Array.from(unique);
+    list.sort((a, b) => {
+      const idxA = defaultCenterOrder.indexOf(a);
+      const idxB = defaultCenterOrder.indexOf(b);
+      if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+      if (idxA !== -1) return -1;
+      if (idxB !== -1) return 1;
+      return a.localeCompare(b);
+    });
+
+    return ['All Centers', ...list];
+  }, [allTeachers]);
+
   const filteredTeachers = useMemo(() => {
     const list = allTeachers.filter(t => {
       const teacherCenter = (t.center || '').toLowerCase().trim();
@@ -239,7 +261,8 @@ export const TeacherSelector: React.FC<TeacherSelectorProps> = ({
         teacherCenter === selectedCenter || 
         (selectedCenter === 'tc' && (teacherCenter.includes('tc') || teacherCenter.includes('tuition'))) ||
         (selectedCenter === 'pcmc' && (teacherCenter.includes('pcmc') || teacherCenter.includes('pimpri'))) ||
-        (selectedCenter === 'viman nagar' && teacherCenter.includes('viman'));
+        (selectedCenter === 'viman nagar' && teacherCenter.includes('viman')) ||
+        (selectedCenter === 'had' && (teacherCenter.includes('had') || teacherCenter.includes('hadapsar')));
 
       const matchesSubject = activeSubject === 'All' || t.subject === activeSubject;
       const q = searchQuery.toLowerCase().trim();

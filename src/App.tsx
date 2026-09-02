@@ -63,22 +63,44 @@ export default function App() {
     const saved = getSavedSheetData();
     return saved?.batches || [];
   });
-  const [lastSyncedAt, setLastSyncedAt] = useState<string | undefined>("All Centers Synced (PCMC, Viman Nagar, TC)");
+  const [lastSyncedAt, setLastSyncedAt] = useState<string | undefined>("All Centers Synced (PCMC, Viman Nagar, TC, HAD)");
 
   // Load saved template image from localStorage if available
   const savedBgImage = typeof window !== 'undefined' ? localStorage.getItem('pw_custom_template_bg') || undefined : undefined;
 
-  // Background auto-sync check
+  // Realtime background auto-sync: on mount, on window focus (when user edits Google Sheet & switches tab), and every 60s
   useEffect(() => {
-    fetchGoogleSheetLive(defaultSheetUrl)
-      .then((res) => {
-        if (res.teachers?.length) setSyncedTeachers(res.teachers);
-        if (res.batches?.length) setSyncedBatches(res.batches);
-        if (res.lastSyncedAt) setLastSyncedAt(res.lastSyncedAt);
-      })
-      .catch((err) => {
-        console.log('Background sheet sync notice:', err.message);
-      });
+    let isSubscribed = true;
+
+    const performLiveSync = () => {
+      fetchGoogleSheetLive(defaultSheetUrl)
+        .then((res) => {
+          if (!isSubscribed) return;
+          if (res.teachers?.length) {
+            setSyncedTeachers(res.teachers);
+          }
+          if (res.batches?.length) setSyncedBatches(res.batches);
+          if (res.lastSyncedAt) setLastSyncedAt(res.lastSyncedAt);
+        })
+        .catch((err) => {
+          console.log('Live sheet sync note:', err.message);
+        });
+    };
+
+    // 1. Initial sync
+    performLiveSync();
+
+    // 2. Immediate auto-sync when user comes back from Google Sheets tab
+    window.addEventListener('focus', performLiveSync);
+
+    // 3. Periodic refresh every 60s
+    const timer = setInterval(performLiveSync, 60000);
+
+    return () => {
+      isSubscribed = false;
+      window.removeEventListener('focus', performLiveSync);
+      clearInterval(timer);
+    };
   }, []);
 
   const handleSyncSuccess = (result: GoogleSheetSyncResult) => {

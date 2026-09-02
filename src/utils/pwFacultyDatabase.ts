@@ -1,15 +1,15 @@
 import { TeacherProfile } from "../types/thumbnail";
 
-// All PW Faculty across Centers:
+// All PW Faculty across Centers (Auto-synced from Google Sheet):
 // - PCMC: Status = "Active" only
 // - Viman Nagar: All faculty
 // - TC: All faculty
+// - HAD: All faculty
 // Subject Order: Physics -> Chemistry -> Mathematics -> Botany -> Zoology -> English -> SST -> General (at last)
 export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_5_135QmuQq",
     "name": "Bhola Kumar",
-    "rawName": "bhola.kumar - PBH",
     "teacherCode": "PBH",
     "subject": "Physics",
     "center": "Viman Nagar",
@@ -19,9 +19,19 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
     "driveId": "135QmuQqoeFyy8BH05LbNuuRaWnCvnfxy"
   },
   {
+    "id": "pw_teacher_had_5_135QmuQq",
+    "name": "Bhola Kumar",
+    "teacherCode": "PBH",
+    "subject": "Physics",
+    "center": "HAD",
+    "title": "Physics Faculty | HAD",
+    "imageUrl": "https://lh3.googleusercontent.com/d/135QmuQqoeFyy8BH05LbNuuRaWnCvnfxy",
+    "defaultPosition": "right",
+    "driveId": "135QmuQqoeFyy8BH05LbNuuRaWnCvnfxy"
+  },
+  {
     "id": "pw_teacher_pcmc_54_1kRxMxea",
     "name": "Deepak Kanskar",
-    "rawName": "Deepak Kanskar",
     "teacherCode": "PDK",
     "subject": "Physics",
     "center": "PCMC",
@@ -33,7 +43,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_4_1AzIsxDe",
     "name": "Hanuman Sharma",
-    "rawName": "hanuman.sharma - PHS",
     "teacherCode": "PHS",
     "subject": "Physics",
     "center": "Viman Nagar",
@@ -43,9 +52,19 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
     "driveId": "1AzIsxDeD3w6yIxkQ0EO7a-BXbwOgLP_y"
   },
   {
+    "id": "pw_teacher_had_4_1AzIsxDe",
+    "name": "Hanuman Sharma",
+    "teacherCode": "PHS",
+    "subject": "Physics",
+    "center": "HAD",
+    "title": "Physics Faculty | HAD",
+    "imageUrl": "https://lh3.googleusercontent.com/d/1AzIsxDeD3w6yIxkQ0EO7a-BXbwOgLP_y",
+    "defaultPosition": "right",
+    "driveId": "1AzIsxDeD3w6yIxkQ0EO7a-BXbwOgLP_y"
+  },
+  {
     "id": "pw_teacher_pcmc_60_1OTNB5KE",
     "name": "Himashu Pandey",
-    "rawName": "Himashu pandey",
     "teacherCode": "PHP",
     "subject": "Physics",
     "center": "PCMC",
@@ -57,7 +76,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_2_1Gzskqbt",
     "name": "Kailash Chandra Tiwari Pkct",
-    "rawName": "Kailash Chandra Tiwari PKCT",
     "teacherCode": "PKCT",
     "subject": "Physics",
     "center": "TC",
@@ -69,7 +87,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_22_1gzUEFms",
     "name": "Krishna Kumar",
-    "rawName": "Krishna Kumar",
     "teacherCode": "PKK",
     "subject": "Physics",
     "center": "PCMC",
@@ -81,7 +98,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_30_12JhYIu6",
     "name": "Love Swarnkar",
-    "rawName": "love.swarnkar",
     "teacherCode": "PLS",
     "subject": "Physics",
     "center": "PCMC",
@@ -93,7 +109,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_68_12jDmU8V",
     "name": "Mayank Tamrakar",
-    "rawName": "Mayank Tamrakar",
     "teacherCode": "PMT",
     "subject": "Physics",
     "center": "PCMC",
@@ -105,7 +120,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_77_10Ct9EFo",
     "name": "Mayur Dhawale",
-    "rawName": "Mayur Dhawale",
     "teacherCode": "PMD",
     "subject": "Physics",
     "center": "PCMC",
@@ -117,7 +131,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_13_1xzX0R04",
     "name": "Naveen Kumar",
-    "rawName": "naveen.kumar - PNK",
     "teacherCode": "PNK",
     "subject": "Physics",
     "center": "Viman Nagar",
@@ -129,7 +142,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_65_14emuxr0",
     "name": "Quaneet Laraib",
-    "rawName": "quaneet laraib",
     "teacherCode": "PQL",
     "subject": "Physics",
     "center": "PCMC",
@@ -141,7 +153,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_7_1VAtgiD2",
     "name": "Ritesh Kumar PRK",
-    "rawName": "Ritesh Kumar PRK",
     "teacherCode": "PRK",
     "subject": "Physics",
     "center": "TC",
@@ -153,7 +164,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_42_1wwkeG08",
     "name": "Sachin Kumar Singh",
-    "rawName": "Sachin Kumar Singh",
     "teacherCode": "PSK",
     "subject": "Physics",
     "center": "PCMC",
@@ -165,7 +175,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_14_1OAjfd6w",
     "name": "Surabhi Gupta",
-    "rawName": "surabhi.gupta",
     "teacherCode": "PSG",
     "subject": "Physics",
     "center": "PCMC",
@@ -177,7 +186,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_7_1OAjfd6w",
     "name": "Surbhi Gupta",
-    "rawName": "Surbhi Gupta",
     "teacherCode": "PSG",
     "subject": "Physics",
     "center": "PCMC",
@@ -189,7 +197,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_44_1NQWc89K",
     "name": "Surendra Bijarnia",
-    "rawName": "Surendra Bijarnia",
     "teacherCode": "PSB",
     "subject": "Physics",
     "center": "PCMC",
@@ -201,7 +208,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_2_13VVoqgH",
     "name": "Tushar Saini1",
-    "rawName": "tushar.saini1 - PTS",
     "teacherCode": "PTS",
     "subject": "Physics",
     "center": "Viman Nagar",
@@ -211,9 +217,19 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
     "driveId": "13VVoqgH2pg_fOENZouYRZC_ZHfntIM8R"
   },
   {
+    "id": "pw_teacher_had_2_13VVoqgH",
+    "name": "Tushar Saini1",
+    "teacherCode": "PTS",
+    "subject": "Physics",
+    "center": "HAD",
+    "title": "Physics Faculty | HAD",
+    "imageUrl": "https://lh3.googleusercontent.com/d/13VVoqgH2pg_fOENZouYRZC_ZHfntIM8R",
+    "defaultPosition": "right",
+    "driveId": "13VVoqgH2pg_fOENZouYRZC_ZHfntIM8R"
+  },
+  {
     "id": "pw_teacher_pcmc_78_1kQHciQC",
     "name": "Zeeshan Eqbal",
-    "rawName": "Zeeshan Eqbal",
     "teacherCode": "PZE",
     "subject": "Physics",
     "center": "PCMC",
@@ -225,7 +241,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_8_1kVEsW17",
     "name": "Aniket Mishra Sir CAM",
-    "rawName": "Aniket Mishra sir CAM",
     "teacherCode": "CAM",
     "subject": "Chemistry",
     "center": "TC",
@@ -237,7 +252,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_64_157UoEHk",
     "name": "Arshad Ansari",
-    "rawName": "Arshad Ansari",
     "teacherCode": "CAA",
     "subject": "Chemistry",
     "center": "PCMC",
@@ -249,7 +263,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_7_1ZeSRMlp",
     "name": "Bhawna Sharma",
-    "rawName": "bhawna.sharma - CBS",
     "teacherCode": "CBS",
     "subject": "Chemistry",
     "center": "Viman Nagar",
@@ -261,7 +274,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_50_1qsnD_AO",
     "name": "Govind Singh Shekhawat",
-    "rawName": "Govind Singh Shekhawat",
     "teacherCode": "CGS",
     "subject": "Chemistry",
     "center": "PCMC",
@@ -273,7 +285,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_8_1AWrPq3L",
     "name": "Gurujeet Kumar",
-    "rawName": "gurujeet.kumar - CGK",
     "teacherCode": "CGK",
     "subject": "Chemistry",
     "center": "Viman Nagar",
@@ -285,7 +296,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_3_1rGQVUcf",
     "name": "Hansraj Prajapat",
-    "rawName": "hansraj.prajapat - CHP",
     "teacherCode": "CHP",
     "subject": "Chemistry",
     "center": "Viman Nagar",
@@ -295,9 +305,19 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
     "driveId": "1rGQVUcfKn9Ge9tcY8yrh-1Bt-0BqINnS"
   },
   {
+    "id": "pw_teacher_had_3_1rGQVUcf",
+    "name": "Hansraj Prajapat",
+    "teacherCode": "CHP",
+    "subject": "Chemistry",
+    "center": "HAD",
+    "title": "Chemistry Faculty | HAD",
+    "imageUrl": "https://lh3.googleusercontent.com/d/1rGQVUcfKn9Ge9tcY8yrh-1Bt-0BqINnS",
+    "defaultPosition": "right",
+    "driveId": "1rGQVUcfKn9Ge9tcY8yrh-1Bt-0BqINnS"
+  },
+  {
     "id": "pw_teacher_pcmc_35_18a8mFnv",
     "name": "Kunal Verma",
-    "rawName": "Kunal Verma",
     "teacherCode": "CKV",
     "subject": "Chemistry",
     "center": "PCMC",
@@ -309,7 +329,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_11_1eywhPDC",
     "name": "Mahender Pal",
-    "rawName": "mahender.pal - CMP",
     "teacherCode": "CMP",
     "subject": "Chemistry",
     "center": "Viman Nagar",
@@ -321,7 +340,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_59_14wXAGyY",
     "name": "Mohd Shazil Iqbal",
-    "rawName": "Mohd Shazil Iqbal",
     "teacherCode": "CSI",
     "subject": "Chemistry",
     "center": "PCMC",
@@ -333,7 +351,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_76_14U3hwKp",
     "name": "Nitesh Sir Pcmc",
-    "rawName": "Nitesh Sir PCMC",
     "teacherCode": "CNI",
     "subject": "Chemistry",
     "center": "PCMC",
@@ -345,7 +362,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_57_1KlbLdSP",
     "name": "Prajakt Rane",
-    "rawName": "Prajakt Rane",
     "teacherCode": "CPR",
     "subject": "Chemistry",
     "center": "PCMC",
@@ -357,7 +373,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_1_1ZVW2Y7O",
     "name": "Rishesh Ameriya CRA",
-    "rawName": "Rishesh Ameriya CRA",
     "teacherCode": "CRA",
     "subject": "Chemistry",
     "center": "PCMC",
@@ -369,7 +384,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_4_1VFswxTn",
     "name": "Sadika Siddiqui Cssm",
-    "rawName": "Sadika siddiqui CSSM",
     "teacherCode": "CSSM",
     "subject": "Chemistry",
     "center": "TC",
@@ -381,7 +395,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_46_1Jxlw1R9",
     "name": "Shivani Kalra",
-    "rawName": "Shivani Kalra",
     "teacherCode": "CSK",
     "subject": "Chemistry",
     "center": "PCMC",
@@ -393,7 +406,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_56_1oEurHUP",
     "name": "Sunil Singh",
-    "rawName": "Sunil singh",
     "teacherCode": "CSS",
     "subject": "Chemistry",
     "center": "PCMC",
@@ -405,7 +417,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_75_14ujOkns",
     "name": "Tanveer Hasan",
-    "rawName": "Tanveer Hasan",
     "teacherCode": "CTH",
     "subject": "Chemistry",
     "center": "PCMC",
@@ -417,7 +428,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_45_1X-udRyY",
     "name": "Ajay Patidar",
-    "rawName": "AJAY PATIDAR",
     "teacherCode": "MAP",
     "subject": "Mathematics",
     "center": "PCMC",
@@ -429,7 +439,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_1_1xFx_w8f",
     "name": "Balraj Singh MBS",
-    "rawName": "Balraj Singh MBS",
     "teacherCode": "MBS",
     "subject": "Mathematics",
     "center": "TC",
@@ -441,7 +450,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_10_1IoOabu1",
     "name": "Danish Hashmi",
-    "rawName": "danish.hashmi - MDH",
     "teacherCode": "MDH",
     "subject": "Mathematics",
     "center": "Viman Nagar",
@@ -453,7 +461,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_37_1nnsyGh5",
     "name": "Imran Ahmad",
-    "rawName": "imran.ahmad",
     "teacherCode": "MIA",
     "subject": "Mathematics",
     "center": "PCMC",
@@ -465,7 +472,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_49_1xfg1_IS",
     "name": "Kuldeep Dewangan Sir",
-    "rawName": "Kuldeep Dewangan sir",
     "teacherCode": "MKD",
     "subject": "Mathematics",
     "center": "PCMC",
@@ -477,7 +483,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_74_1YhRErXV",
     "name": "Mohit Sharma",
-    "rawName": "Mohit Sharma",
     "teacherCode": "MMS",
     "subject": "Mathematics",
     "center": "PCMC",
@@ -489,7 +494,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_69_1lEu0oRw",
     "name": "Mukesh Sir Pcmc",
-    "rawName": "Mukesh Sir PCMC",
     "teacherCode": "MMK",
     "subject": "Mathematics",
     "center": "PCMC",
@@ -501,7 +505,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_66_1vo8dAr8",
     "name": "Prashant Mishra",
-    "rawName": "Prashant Mishra",
     "teacherCode": "MPH",
     "subject": "Mathematics",
     "center": "PCMC",
@@ -513,7 +516,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_30_1HsCYDEI",
     "name": "Rahul Meena MRM",
-    "rawName": "Rahul Meena MRM",
     "teacherCode": "MRM",
     "subject": "Mathematics",
     "center": "Viman Nagar",
@@ -525,7 +527,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_14_1kMtN-yN",
     "name": "Rohini Thete",
-    "rawName": "rohini.thete - MRT",
     "teacherCode": "MRT",
     "subject": "Mathematics",
     "center": "Viman Nagar",
@@ -537,7 +538,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_6_1ijlKFE_",
     "name": "Siddharth Sharma2",
-    "rawName": "siddharth.sharma2 - MSS",
     "teacherCode": "MSS",
     "subject": "Mathematics",
     "center": "Viman Nagar",
@@ -547,9 +547,19 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
     "driveId": "1ijlKFE_2eGOetq2qSiI2f7Oi007D_QbQ"
   },
   {
+    "id": "pw_teacher_had_6_1ijlKFE_",
+    "name": "Siddharth Sharma2",
+    "teacherCode": "MSS",
+    "subject": "Mathematics",
+    "center": "HAD",
+    "title": "Mathematics Faculty | HAD",
+    "imageUrl": "https://lh3.googleusercontent.com/d/1ijlKFE_2eGOetq2qSiI2f7Oi007D_QbQ",
+    "defaultPosition": "right",
+    "driveId": "1ijlKFE_2eGOetq2qSiI2f7Oi007D_QbQ"
+  },
+  {
     "id": "pw_teacher_tc_9_1l4Xsank",
     "name": "Vikas Kumar Mvks",
-    "rawName": "Vikas Kumar MVKS",
     "teacherCode": "MVKS",
     "subject": "Mathematics",
     "center": "TC",
@@ -561,7 +571,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_70_1wUDcxl2",
     "name": "Alok Kumar Shukla",
-    "rawName": "Alok Kumar Shukla",
     "teacherCode": "BAK",
     "subject": "Botany",
     "center": "PCMC",
@@ -573,7 +582,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_3_1rJCqIQ0",
     "name": "Dimple Data BDD",
-    "rawName": "Dimple Data BDD",
     "teacherCode": "BDD",
     "subject": "Botany",
     "center": "TC",
@@ -585,7 +593,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_11_1yuStE4J",
     "name": "Ehsan Alam Beas",
-    "rawName": "Ehsan Alam BEAS",
     "teacherCode": "BEAS",
     "subject": "Botany",
     "center": "TC",
@@ -597,7 +604,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_1_10QrCIdO",
     "name": "Girish Prajapat",
-    "rawName": "girish.prajapat - BGP",
     "teacherCode": "BGP",
     "subject": "Botany",
     "center": "Viman Nagar",
@@ -607,9 +613,19 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
     "driveId": "10QrCIdO1Nvj59UzoSXxrTCa1MSFfu5fh"
   },
   {
+    "id": "pw_teacher_had_1_10QrCIdO",
+    "name": "Girish Prajapat",
+    "teacherCode": "BGP",
+    "subject": "Botany",
+    "center": "HAD",
+    "title": "Botany Faculty | HAD",
+    "imageUrl": "https://lh3.googleusercontent.com/d/10QrCIdO1Nvj59UzoSXxrTCa1MSFfu5fh",
+    "defaultPosition": "right",
+    "driveId": "10QrCIdO1Nvj59UzoSXxrTCa1MSFfu5fh"
+  },
+  {
     "id": "pw_teacher_pcmc_36_1fdrN-rF",
     "name": "Kamlesh Ranjan",
-    "rawName": "kamlesh ranjan",
     "teacherCode": "BKR",
     "subject": "Botany",
     "center": "PCMC",
@@ -621,7 +637,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_72_1ODCttyS",
     "name": "Mukul Rohilla",
-    "rawName": "Mukul Rohilla",
     "teacherCode": "BMR",
     "subject": "Botany",
     "center": "PCMC",
@@ -633,7 +648,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_9_18MRMCBH",
     "name": "Seema Manwani",
-    "rawName": "seema.manwani - BSM",
     "teacherCode": "BSM",
     "subject": "Botany",
     "center": "Viman Nagar",
@@ -645,7 +659,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_10_1urDM1RB",
     "name": "Jaspreet Kaur ZJK",
-    "rawName": "Jaspreet kaur ZJK",
     "teacherCode": "ZJK",
     "subject": "Zoology",
     "center": "TC",
@@ -657,7 +670,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_12_1QSwF9IT",
     "name": "Naina Chawla",
-    "rawName": "naina.chawla - ZNC",
     "teacherCode": "ZNC",
     "subject": "Zoology",
     "center": "Viman Nagar",
@@ -669,7 +681,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_13_1JMGprjI",
     "name": "Shashank Nagar",
-    "rawName": "shashank.nagar",
     "teacherCode": "ZSN",
     "subject": "Zoology",
     "center": "PCMC",
@@ -681,7 +692,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_58_17ZYzC5X",
     "name": "Shreya Ma'am",
-    "rawName": "Shreya Ma'am",
     "teacherCode": "ZSS",
     "subject": "Zoology",
     "center": "PCMC",
@@ -693,7 +703,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_8_1kl-lPiE",
     "name": "Shweta Vasoya",
-    "rawName": "Shweta Vasoya",
     "teacherCode": "ZSV",
     "subject": "Zoology",
     "center": "PCMC",
@@ -705,7 +714,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_55_1Exd3R4k",
     "name": "Ishfaq Ahmad Dar",
-    "rawName": "Ishfaq Ahmad Dar",
     "teacherCode": "EID",
     "subject": "English",
     "center": "PCMC",
@@ -717,7 +725,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_6_1zEXuQai",
     "name": "Priti Tiwari Mam Epts",
-    "rawName": "Priti Tiwari Mam EPTS",
     "teacherCode": "EPTS",
     "subject": "English",
     "center": "TC",
@@ -729,7 +736,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_pcmc_61_11dFlJEu",
     "name": "Anurag Atul",
-    "rawName": "Anurag Atul",
     "teacherCode": "SAA",
     "subject": "SST",
     "center": "PCMC",
@@ -741,7 +747,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_36_1dGi4Knb",
     "name": "Mohit Yadav SMY",
-    "rawName": "Mohit Yadav SMY",
     "teacherCode": "SMY",
     "subject": "SST",
     "center": "Viman Nagar",
@@ -753,7 +758,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_15_1dGi4Knb",
     "name": "Mohit Yadav1",
-    "rawName": "mohit.yadav1 - SMY",
     "teacherCode": "SMY",
     "subject": "SST",
     "center": "Viman Nagar",
@@ -765,7 +769,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_5_17lyhIIW",
     "name": "Supanjita Mam Svsm",
-    "rawName": "Supanjita mam SVSM",
     "teacherCode": "SVSM",
     "subject": "SST",
     "center": "TC",
@@ -777,7 +780,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_23_1NRR5qgY",
     "name": "Aasiya Maam",
-    "rawName": "Aasiya maam",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -789,7 +791,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_38_1FJMxDgb",
     "name": "Abhay Pratap Singh",
-    "rawName": "Abhay Pratap Singh",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -801,7 +802,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_17_15Z2oZkI",
     "name": "Abhijeet Sir",
-    "rawName": "Abhijeet sir",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -813,7 +813,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_33_1e87ZYLY",
     "name": "Ambadas Sir",
-    "rawName": "Ambadas Sir",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -825,7 +824,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_25_1GP8dS7L",
     "name": "Anshul Sir",
-    "rawName": "Anshul Sir",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -837,7 +835,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_19_1-OFdG0Q",
     "name": "Anup Kumar Vimal",
-    "rawName": "Anup kumar vimal",
     "teacherCode": "",
     "subject": "General",
     "center": "TC",
@@ -849,7 +846,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_21_1eAF0RtB",
     "name": "Arif Sir",
-    "rawName": "Arif Sir",
     "teacherCode": "",
     "subject": "General",
     "center": "TC",
@@ -861,7 +857,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_26_1-uGndpb",
     "name": "Arvind Kumar",
-    "rawName": "Arvind kumar",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -873,7 +868,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_20_1DyfAN1Q",
     "name": "Bhawani Maam",
-    "rawName": "Bhawani maam.",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -885,7 +879,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_24_1VElSonb",
     "name": "Harshit Sir",
-    "rawName": "Harshit Sir",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -897,7 +890,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_40_1_tkTvP1",
     "name": "Janardan Dixit",
-    "rawName": "janardan dixit",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -909,7 +901,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_41_1i7AChwA",
     "name": "Kalyani Diwate",
-    "rawName": "Kalyani Diwate",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -921,7 +912,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_18_1fdrN-rF",
     "name": "Kamlesh Ranjan",
-    "rawName": "kamlesh ranjan",
     "teacherCode": "",
     "subject": "General",
     "center": "TC",
@@ -933,7 +923,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_14_1Y1d7-Az",
     "name": "Mazul_sir",
-    "rawName": "Mazul_sir_TC",
     "teacherCode": "TC",
     "subject": "General",
     "center": "TC",
@@ -945,7 +934,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_12_15FpE40b",
     "name": "Monica Maam",
-    "rawName": "Monica Maam",
     "teacherCode": "",
     "subject": "General",
     "center": "TC",
@@ -957,7 +945,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_22_1ODCttyS",
     "name": "Mukul Rohilla",
-    "rawName": "Mukul Rohilla",
     "teacherCode": "",
     "subject": "General",
     "center": "TC",
@@ -969,7 +956,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_32_1Z31C1Aa",
     "name": "Nawlesh Sir",
-    "rawName": "Nawlesh Sir",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -981,7 +967,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_13_1CAKNTcj",
     "name": "Neeraj Sir TC",
-    "rawName": "Neeraj Sir TC",
     "teacherCode": "TC",
     "subject": "General",
     "center": "TC",
@@ -993,7 +978,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_43_1tsInd5T",
     "name": "Neha Verma",
-    "rawName": "Neha verma",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -1005,7 +989,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_21_1cZivJa7",
     "name": "Nikhil Kumar",
-    "rawName": "nikhil.kumar",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -1017,7 +1000,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_37_1cGXCTDP",
     "name": "Nurjanat Khatun",
-    "rawName": "Nurjanat Khatun",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -1029,7 +1011,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_39_1QjNMtn0",
     "name": "Parth Kulkarni",
-    "rawName": "Parth Kulkarni",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -1041,7 +1022,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_20_1gJTtJ15",
     "name": "Prachi Chaudhary",
-    "rawName": "Prachi.chaudhary",
     "teacherCode": "",
     "subject": "General",
     "center": "TC",
@@ -1053,7 +1033,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_35_1TMhO4h9",
     "name": "Pratim Das",
-    "rawName": "pratim das",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -1065,7 +1044,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_27_18qT_z__",
     "name": "Pravin Tripathi (viman Nagar)",
-    "rawName": "Pravin tripathi (Viman Nagar)",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -1077,7 +1055,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_31_1yLjY95d",
     "name": "Ravi Kumar Gupta",
-    "rawName": "Ravi Kumar Gupta",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -1089,7 +1066,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_18_1kMtN-yN",
     "name": "Rohini Thete",
-    "rawName": "rohini.thete",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -1101,7 +1077,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_22_1Vorv3xI",
     "name": "Sabyasachi Rout",
-    "rawName": "sabyasachi.rout",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -1113,7 +1088,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_26_1sCewA4k",
     "name": "Saifee Khan",
-    "rawName": "saifee khan",
     "teacherCode": "",
     "subject": "General",
     "center": "TC",
@@ -1125,7 +1099,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_15_19HUNRuJ",
     "name": "Saleem Sir TC",
-    "rawName": "Saleem Sir TC",
     "teacherCode": "TC",
     "subject": "General",
     "center": "TC",
@@ -1137,7 +1110,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_23_1TZOPB9b",
     "name": "Shabbir Ahmad",
-    "rawName": "Shabbir Ahmad",
     "teacherCode": "",
     "subject": "General",
     "center": "TC",
@@ -1149,7 +1121,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_28_1IuWLDzI",
     "name": "Shakshi Ma'am",
-    "rawName": "shakshi Ma'am",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -1161,7 +1132,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_25_14gtWGJ-",
     "name": "Shivani Rai",
-    "rawName": "Shivani Rai",
     "teacherCode": "",
     "subject": "General",
     "center": "TC",
@@ -1173,7 +1143,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_16_1Quvost6",
     "name": "Shraddha_khedkar",
-    "rawName": "Shraddha_Khedkar_TC",
     "teacherCode": "TC",
     "subject": "General",
     "center": "TC",
@@ -1185,7 +1154,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_24_17ZYzC5X",
     "name": "Shreya Ma'am",
-    "rawName": "Shreya Ma'am",
     "teacherCode": "",
     "subject": "General",
     "center": "TC",
@@ -1197,7 +1165,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_42_16C_vgRO",
     "name": "Snehal Wadekar",
-    "rawName": "Snehal Wadekar",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -1209,7 +1176,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_16_1dOHOZqH",
     "name": "Suraj Kanade",
-    "rawName": "suraj.kanade",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -1221,7 +1187,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_tc_17_1NQWc89K",
     "name": "Surendra Sir TC",
-    "rawName": "Surendra sir TC",
     "teacherCode": "TC",
     "subject": "General",
     "center": "TC",
@@ -1233,7 +1198,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_29_1aoquBaW",
     "name": "Tejaswi Raj Sir",
-    "rawName": "Tejaswi raj Sir",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -1245,7 +1209,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_34_1HGjE1Nb",
     "name": "Vivek Kumar Tripathi",
-    "rawName": "Vivek Kumar Tripathi",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
@@ -1257,7 +1220,6 @@ export const PW_SHEET_FACULTY_DATABASE: TeacherProfile[] = [
   {
     "id": "pw_teacher_viman_nagar_19_1-NEYnWB",
     "name": "Yogender Sir",
-    "rawName": "Yogender Sir",
     "teacherCode": "",
     "subject": "General",
     "center": "Viman Nagar",
