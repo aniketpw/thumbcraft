@@ -1,0 +1,6 @@
+{
+  "name": "ThumbCraft - 1-Click EdTech Thumbnail Generator",
+  "description": "Instant 1-click thumbnail creator for educational batches, YouTube lectures, teachers & chapters with smart auto-parse and high-resolution export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

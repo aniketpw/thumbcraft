@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(241, 245, 249, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(203, 213, 225, 0.9);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.9);
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+}
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+.font-oswald {
+  font-family: 'Oswald', sans-serif;
+}
+.font-anton {
+  font-family: 'Anton', sans-serif;
+}
+.font-outfit {
+  font-family: 'Outfit', sans-serif;
+}
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+.font-bangers {
+  font-family: 'Bangers', cursive;
+}
