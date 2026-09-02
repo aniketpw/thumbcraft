@@ -79,7 +79,7 @@ export const ThumbnailPreview: React.FC<ThumbnailPreviewProps> = ({
             Live Preview
           </span>
           <span className="rounded bg-slate-100 px-1.5 py-0.5 text-[10px] font-mono font-semibold text-slate-600">
-            {thumbnailData.resolution === '1080p' ? '1920 × 920' : '1280 × 614'}
+            {thumbnailData.resolution === '1080p' ? '1920 × 1080 px' : '1280 × 720 px'}
           </span>
         </div>
 
@@ -156,7 +156,7 @@ export const ThumbnailPreview: React.FC<ThumbnailPreviewProps> = ({
           className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-cyan-600 px-4 py-2 text-xs font-bold text-white shadow-sm hover:bg-cyan-700 transition-all active:scale-95 sm:flex-initial"
         >
           <Download className="h-4 w-4" />
-          <span>Download HD Thumbnail</span>
+          <span>Download {thumbnailData.resolution === '1080p' ? '1080p FHD' : '1280 × 720 HD'}</span>
         </button>
       </div>
 

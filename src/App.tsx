@@ -153,7 +153,7 @@ export default function App() {
       showBadge: true,
       extraSticker: 'LIVE',
       showSafeZone: false,
-      resolution: '1080p'
+      resolution: '720p'
     };
   });
 

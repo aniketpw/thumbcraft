@@ -1,5 +1,5 @@
 import { ThumbnailData } from '../types/thumbnail';
-import { renderExactPwTornTemplate, drawSubjectIcon } from './pwTemplateGenerator';
+import { renderExactPwTornTemplate, drawSubjectIcon, drawPwLogo } from './pwTemplateGenerator';
 import { 
   PW_OFFICIAL_TEMPLATE_DATA_URL,
   PW_OFFICIAL_TEMPLATE_WIDTH,
@@ -150,23 +150,10 @@ export async function renderThumbnailToCanvas(
     }
   }
 
-  // 2. Set EXACT Dimensions:
-  let width: number;
-  let height: number;
-
-  if (bgImg) {
-    const targetW = data.resolution === '1080p' ? 1920 : 1280;
-    const aspect = bgImg.naturalWidth / bgImg.naturalHeight || PW_OFFICIAL_TEMPLATE_ASPECT_RATIO;
-    width = targetW;
-    height = Math.round(targetW / aspect);
-  } else if (isPwTorn) {
-    width = data.resolution === '1080p' ? 1920 : 1280;
-    height = Math.round(width / PW_OFFICIAL_TEMPLATE_ASPECT_RATIO);
-  } else {
-    width = data.resolution === '1080p' ? 1920 : 1280;
-    height = data.resolution === '1080p' ? 1080 : 720;
-  }
-
+  // 2. Set EXACT Dimensions: Official YouTube 16:9 Thumbnail Standard (1280 × 720 HD or 1920 × 1080 FHD)
+  const is1080p = data.resolution === '1080p';
+  const width = is1080p ? 1920 : 1280;
+  const height = is1080p ? 1080 : 720;
   const scaleRatio = width / 1920;
 
   canvas.width = width;
@@ -230,6 +217,12 @@ async function renderPwOfficialTornLayout(
       renderExactPwTornTemplate(ctx, width, height, scale);
     }
   }
+
+  // 1.1 PW Emblem in Top Right (Crisp Vector Circle matching official PW brand)
+  const logoRadius = Math.round(height * 0.115);
+  const logoX = width - (width * 0.055);
+  const logoY = height * 0.145;
+  drawPwLogo(ctx, logoX, logoY, logoRadius);
 
   // 2. Draw Teacher on the Right White Half (Auto-Trimmed & Uniformly Grounded)
   if (teacherImageUrl) {

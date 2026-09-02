@@ -72,7 +72,7 @@ export const Header: React.FC<HeaderProps> = ({
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              720p
+              1280 × 720 (HD)
             </button>
             <button
               onClick={() => setResolution('1080p')}
@@ -82,7 +82,7 @@ export const Header: React.FC<HeaderProps> = ({
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              1080p FHD
+              1920 × 1080 (FHD)
             </button>
           </div>
 
