@@ -388,16 +388,26 @@ async function renderPwOfficialTornLayout(
     finalLines = [chapterPart || topicPart];
   }
 
-  const lineHeight = targetFontSize * 1.22;
-  const totalBlockH = (finalLines.length - 1) * lineHeight;
-  const cyanCenterY = cyanTopY + (cyanAvailableH / 2);
-  let startY = cyanCenterY - (totalBlockH / 2);
+  if (finalLines.length === 0) {
+    ctx.save();
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.32)';
+    ctx.font = `700 ${Math.round(height * 0.048)}px 'Montserrat', sans-serif`;
+    ctx.fillText('PASTE LECTURE DETAILS', cyanCenterX, cyanTopY + (cyanAvailableH / 2) - 12);
+    ctx.font = `600 ${Math.round(height * 0.032)}px 'Outfit', sans-serif`;
+    ctx.fillText('Chapter Name - Lec No : Topic', cyanCenterX, cyanTopY + (cyanAvailableH / 2) + 20);
+    ctx.restore();
+  } else {
+    const lineHeight = targetFontSize * 1.22;
+    const totalBlockH = (finalLines.length - 1) * lineHeight;
+    const cyanCenterY = cyanTopY + (cyanAvailableH / 2);
+    let startY = cyanCenterY - (totalBlockH / 2);
 
-  ctx.font = `700 ${targetFontSize}px 'Montserrat', sans-serif`;
-  finalLines.forEach((line) => {
-    ctx.fillText(line, cyanCenterX, startY);
-    startY += lineHeight;
-  });
+    ctx.font = `700 ${targetFontSize}px 'Montserrat', sans-serif`;
+    finalLines.forEach((line) => {
+      ctx.fillText(line, cyanCenterX, startY);
+      startY += lineHeight;
+    });
+  }
 
   ctx.restore();
 

@@ -35,7 +35,7 @@ import {
 } from './utils/googleSheetSync';
 
 export default function App() {
-  const initialInput = "Chemical Bonding and Molecular Structure - 11 : Reason for Hybridisaton | SIP S41-AJ31MA 2026 | Chemistry";
+  const initialInput = "";
   const defaultSheetUrl = "https://docs.google.com/spreadsheets/d/10TOZqECN2LW0dJj8JuWDdeE28sV4p19KDpAGkltlvwE/edit?usp=sharing";
 
   const [inputValue, setInputValue] = useState<string>(initialInput);
@@ -120,13 +120,13 @@ export default function App() {
     const defaultBatch = BATCH_PRESETS[0];
 
     return {
-      chapterTitle: parsed.chapterTitle || 'Chemical Bonding and Molecular Structure',
-      lectureNo: parsed.lectureNo || '11',
-      topicDescription: parsed.topicDescription || 'Reason for Hybridisaton',
+      chapterTitle: parsed.chapterTitle || '',
+      lectureNo: parsed.lectureNo || '',
+      topicDescription: parsed.topicDescription || '',
       lectureLabel: parsed.lectureLabel || 'LECTURE',
       subject: parsed.subject || 'Chemistry',
-      batchName: parsed.batchName || defaultBatch.name,
-      subtopics: parsed.subtopics.length > 0 ? parsed.subtopics : ["VSEPR Theory & Geometries", "Hybridisation Rules", "Top PYQs & Exceptions"],
+      batchName: parsed.batchName || 'SIP S41-AJ31MA 2026',
+      subtopics: parsed.subtopics || [],
       
       teacherId: defaultTeacher.id,
       teacherName: parsed.teacherName || defaultTeacher.name,
