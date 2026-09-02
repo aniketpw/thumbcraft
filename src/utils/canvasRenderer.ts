@@ -424,9 +424,11 @@ async function renderPwOfficialTornLayout(
   }
 
   ctx.fillStyle = '#000000';
-  ctx.textAlign = 'left';
+  ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText(batchCodeText, pillX + width * 0.032, pillY + pillH / 2);
+  const pillCenterX = pillX + (pillW / 2);
+  const pillCenterY = pillY + (pillH / 2);
+  ctx.fillText(batchCodeText, pillCenterX, pillCenterY);
   ctx.restore();
 
   // 5. Subject Banner & Icon Below White Pill Card (e.g. Set-Square for Maths, No icon for SST & English)
